@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)file:///E:/Person/Desktop/1.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>recommend system</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./推荐系统_files/bootstrap.min.css">
+  <script src="./推荐系统_files/jquery.min.js.下载"></script>
+  <script src="./推荐系统_files/popper.min.js.下载"></script>
+  <script src="./推荐系统_files/bootstrap.min.js.下载"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  </style>
+  <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+</head>
+<body>
+<div class="container">
+<div class="jumbotron text-center bg-light" style="margin-bottom:0;padding:30px">
+  <h1>recommend system</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding:15px 30px 15px 30px ">
+  <form class="form-inline">
+	<select class="form-control" id="sel1" style="width:150px">
+        <option>please select...</option>
+        <option>type</option>
+        <option>topic</option>
+        <option>writer</option>
+      </select>
+	  &nbsp;&nbsp;
+    <input class="form-control" type="text" placeholder="Search" size="105">&nbsp;&nbsp;
+    <button class="btn btn-success" type="button">Search</button>
+  </form>
+</nav>
+<br>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>result</h2>
+      <table class="table" style="word-break:break-all; word-wrap:break-all;table-layout:fixed;">
+    <thead class="thead-light">
+      <tr>
+        <th style="width:20px">Firstname</th>
+        <th style="width:30px">Lastname</th>
+        <th style="width:50px">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="height:150px">
+        <td>John</td>
+        <td>Doe</td>
+        <td data-toggle="popover" data-content="弹出框信息" data-trigger="hover" data-placement="bottom" data-original-title="" title="">john@*********.com</td>
+      </tr>
+      <tr style="height:150px">
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@*********.com</td>
+      </tr>
+      <tr style="height:150px">
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@*********.com</td>
+      </tr>
+    </tbody>
+  </table>
+  
+      <h3>visualization</h3>
+		<img src="./知识工程的推荐系统_files/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre">
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-4">
+      <h2 class="text-muted">recommendation</h2>
+	  <div class="card-header text-muted">movie</div>
+    <div class="card-body">
+		<div class="list-group">
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">First item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Second item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Third item</a></small>
+  </div>
+	</div>
+	
+	 <div class="card-header text-muted">book</div>
+    <div class="card-body">
+		<div class="list-group">
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">First item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Second item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Third item</a></small>
+  </div>
+	</div>
+	
+	 <div class="card-header text-muted">article</div>
+    <div class="card-body">
+		<div class="list-group">
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">First item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Second item</a></small>
+    <small><a href="file:///E:/Person/Desktop/1.html#" class="list-group-item list-group-item-action text-primary" style="border: 0px;">Third item</a></small>
+  </div>
+	</div>
+      </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0;padding:20px">
+  
+</div>
+</div>
+
+</body></html>

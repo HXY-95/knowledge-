@@ -1,0 +1,86 @@
+{% extends "base.html" %}  
+{% block content %}  
+<form action="/select/" method="get">
+<table class="tabl">
+    <tr>
+        <td>
+            选择查询类型
+            <select name="search_type">
+                <option name="author">作者</option>
+                <option name="type">类型</option>
+                <option name="subject">主题</option>
+            </select>
+            <input type="text" name="search_condition"/>
+        </td>
+        <td>
+            <input type="submit" value="查询">
+        </td>
+    </tr>
+</table>
+</form>
+{% for post in posts %}
+<table>
+    <tr>
+        <td rowspan="3">
+            展示查询列表
+            <!--<img src="{{ post.thumbnail}}" width="200px" height="200px" alt="链接失效" border="">-->
+            <div class="responsive">
+              <div class="img">
+                <a target="_blank" href="{{ post.thumbnail }}">
+                  <img src="{{ post.thumbnail }}" alt="链接失效" width="200" height="150">
+                </a>
+                <div class="desc"><a href="{{  post.surl }}">{{ post.name}}</a></div>
+              </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="subject">主题：{{ post.subject }}</div>
+        </td>
+    </tr>
+    <tr>
+        <td><div class="abstract">{{ post.abstract}}</div></td>
+    </tr>
+</table>
+<hr style=" height:1px;border:none;border-top:1px dotted #CDC5BF;" >
+<p>&nbsp;</p>
+{% endfor %}
+<table class="tabl">
+    <tr>
+        <td>
+            选择推荐类型
+            <select id="recommend_type">
+                <option id="file">电影</option>
+                <option id="book">图书</option>
+                <option id="game">游戏</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        {% for postRecommend in postsRecommend %}
+        <td>
+            推荐列表
+            <!--<img src="{{ post.thumbnail}}" width="200px" height="200px" alt="链接失效" border="">-->
+            <div class="responsive">
+              <div class="img">
+                <a target="_blank" href="{{ postRecommend.thumbnail }}">
+                  <img src="{{ postRecommend.thumbnail }}" alt="链接失效" width="200" height="150">
+                </a>
+                <div class="desc"><a href="{{  postRecommend.surl }}">{{ postRecommend.name}}</a></div>
+              </div>
+            </div>
+        </td>
+        {% endfor %}
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            Echarts可视化展示
+        </td>
+    </tr>
+</table>
+{% endblock %}

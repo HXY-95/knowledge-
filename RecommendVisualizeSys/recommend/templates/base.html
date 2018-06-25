@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)file:///E:/Person/Desktop/1.html# -->
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>推荐系统</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+    div.img {
+        border: 1px solid #ccc;
+        width: 170px;
+    }
+
+    div.img:hover {
+        border: 1px solid #777;
+    }
+
+    div.img img {
+        width: 100%;
+        height: 150;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+  </style>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+    var search_type = {{ search_type|safe }};
+    $('#sel1').val = search_type;
+});
+</script>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

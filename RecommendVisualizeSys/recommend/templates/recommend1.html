@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="jumbotron text-center bg-light" style="margin-bottom:0;padding:20px">
+  <h1>推荐系统 V1.0</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="padding:15px 30px 15px 30px ">
+  <form class="form-inline" action="/select/" method="get">
+	<select class="form-control" id="sel1" style="width:135px" name="search_type" value="123">
+        <option>请选择...</option>
+        <option>类型</option>
+        <option>主题</option>
+        <option>作者</option>
+      </select>
+	  &nbsp;&nbsp;
+        <input class="form-control" type="text" placeholder="Search" size="105"  name="search_condition" value="{{search_condition}}">&nbsp;
+    &nbsp;
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+<br>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-9">
+      <h2 class="text-muted">查询结果</h2>
+      <table class="table" style="word-break:break-all; word-wrap:break-all;table-layout:fixed;">
+    <thead class="thead-light">
+      <tr>
+        <th style="width:40px">Name</th>
+        <th style="width:30px">Subject</th>
+        <th style="width:80px">Abstract</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+      <tr style="height:150px">
+        <td>
+          <div class="responsive">
+              <div class="img">
+                <a target="_blank" href="{{ post.thumbnail }}">
+                  <img src="{{ post.thumbnail }}" alt="链接失效" width="150" height="150">
+                </a>
+                <div class="desc"><a href="{{  post.surl }}">{{ post.name}}</a></div>
+              </div>
+            </div>
+        </td>
+        <td>{{ post.subject }}</td>
+        <td data-toggle="popover" data-content="弹出框内容" data-trigger="hover" data-placement="bottom" data-original-title="" title="">{{ post.abstract}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  
+      <h3>可视化</h3>
+		<img src="./推荐系统_files/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre">
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-3">
+      <h2 class="text-muted">相关推荐</h2>
+	  <div class="card-header text-muted">电影</div>
+    <div class="card-body">
+		<div class="list-group">
+        {% for postFilmRecommend in postsFilmRecommend %}
+          <small><a href="{{ postFilmRecommend.surl }}" class="list-group-item list-group-item-action text-primary" style="border: 0px;">{{ postFilmRecommend.name}}</a></small>
+        {% endfor %}
+        </div>
+	</div>
+	
+	 <div class="card-header text-muted">书籍</div>
+    <div class="card-body">
+		<div class="list-group">
+          {% for postBookRecommend in postsBookRecommend %}
+            <small><a href="{{ postBookRecommend.surl }}" class="list-group-item list-group-item-action text-primary" style="border: 0px;">{{ postBookRecommend.name}}</a></small>
+          {% endfor %}
+        </div>
+	</div>
+	
+	 <div class="card-header text-muted">游戏</div>
+    <div class="card-body">
+		<div class="list-group">
+          {% for postGameRecommend in postsGameRecommend %}
+            <small><a href="{{ postGameRecommend.surl }}" class="list-group-item list-group-item-action text-primary" style="border: 0px;">{{ postGameRecommend.name}}</a></small>
+          {% endfor %}
+        </div>
+	</div>
+      </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0;padding:20px">
+  
+</div>
+</div>
+
+{% endblock %}
